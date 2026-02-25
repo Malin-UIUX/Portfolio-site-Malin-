@@ -1,0 +1,120 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    /* Sets the font size to 16px */
+    font-weight: 300;
+    /* Sets the font weight to 300 */
+    line-height: 1.6;
+    /* Sets the line-height to 1.6 * the font-size */
+    color: #4a4a4a;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.75em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.25em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.75em;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1.35em;
+    font-weight: 400;
+}
+
+a {
+    color: #2e8fbf;
+    text-decoration: none;
+    /* No underlining */
+}
+
+a:visited {
+    /* visited link */
+    color: #001a80;
+}
+
+a:active {
+    /* selected link */
+    color: #000000;
+}
+
+a:hover,
+a:focus {
+    color: #424A4E;
+    text-decoration: underline;
+}
+
+
+.button {
+    display: inline-block;
+    /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
+    background-color: #424A4E;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    /* needed to override the default link color */
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid #262a2d;
+    /* width of the border, type, color */
+    transition: 0.2s opacity;
+}
+
+.button:hover .button:focus .button:visited .button:active {
+    color: #ffffff !important;
+    opacity: 0.8;
+    /* Reduces the opacity of the button to 80% */
+    text-decoration: none;
+}
+
+.button.contact {
+    background-color: transparent;
+    color: #424A4E !important;
+    text-transform: uppercase;
+    border: 2px solid #C2C2C2;
+}
+
+.button.contact:hover {
+    background-color: #424A4E;
+    color: #ffffff !important;
+}
+
+.button.cv {
+    background-color: transparent;
+    color: #424A4E !important;
+    text-transform: uppercase;
+    border: 2px solid #C2C2C2;
+}
+
+.button.cv:hover {
+    background-color: #C2C2C2;
+    color: #ffffff !important;
+}
+
+/*
+Colors used:
+Primary Color (Dark Grey): #424A4E;
+Secondary Color (Light Grey): #C2C2C2;
+*/
