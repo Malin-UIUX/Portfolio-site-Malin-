@@ -1,5 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centers the container */
+    padding: 0 15px;
+}
+
+.footer-icon {
+    width: 30px;
+    height: 30px;
+}
+
 img {
     width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: #C2C2C2;
+    padding: 10px 0;
+    border-bottom: 3px solid #4a4a4a;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header img {
+    width: 120px;
     height: auto;
 }
 
@@ -13,7 +46,6 @@ body {
     line-height: 1.6;
     /* Sets the line-height to 1.6 * the font-size */
     color: #4a4a4a;
-    padding: 20px;
 }
 
 h1,
@@ -82,7 +114,10 @@ a:focus {
     transition: 0.2s opacity;
 }
 
-.button:hover .button:focus .button:visited .button:active {
+.button:hover,
+.button:focus,
+.button:visited,
+.button:active {
     color: #ffffff !important;
     opacity: 0.8;
     /* Reduces the opacity of the button to 80% */
@@ -118,3 +153,221 @@ Colors used:
 Primary Color (Dark Grey): #424A4E;
 Secondary Color (Light Grey): #C2C2C2;
 */
+
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    margin-left: 0;
+}
+
+nav ul li a {
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #424A4E;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+#hero {
+    background-color: #C2C2C2;
+    padding: 80px 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+#hero h1 {
+    margin: 0 0 20px;
+    color: #000000;
+}
+
+#hero p:first-of-type {
+    margin: 0;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+#hero p {
+    margin: 20;
+    color: #000000;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav {
+        margin-top: 0;
+    }
+}
+
+/* 1. Basic column styling */
+.col {
+    width: 100%;
+    /* Full width on mobile */
+    padding: 0 15px;
+    /* Horizontal spacing inside the column */
+    box-sizing: border-box;
+}
+
+/* 2. Row flex container to hold columns */
+.row {
+    display: flex;
+    /* Arrange child columns in a row */
+    flex-wrap: wrap;
+    /* Wrap columns to next line if not enough space */
+    margin: 25px -15px;
+    /* Negative margin to counter the column padding */
+}
+
+/* 3. Optional: columns side by side on larger screens */
+@media (min-width: 768px) {
+    .col-50 {
+        width: 50%;
+    }
+
+    /* Custom for About You section */
+    .col-60 {
+        width: 60%;
+    }
+
+    .col-40 {
+        width: 40%;
+    }
+}
+
+.col-50 {
+    width: 50%;
+}
+
+#work {
+    padding: 40px 0;
+}
+
+#work h2 {
+    margin-bottom: 30px;
+}
+
+#work .row {
+    margin-bottom: 60px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #C2C2C2;
+}
+
+#work .row:last-child {
+    border-bottom: none;
+    padding-bottom: 20px;
+}
+
+#work .col {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#work img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #C2C2C2;
+    padding: 40px 15px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+footer h2 {
+    margin-bottom: 15;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+footer a.button {
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #424A4E;
+    text-decoration: none;
+}
+
+footer div {
+    margin-bottom: 20px;
+}
+
+footer svg {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.no-gap-gallery h1 {
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+.no-gap-gallery picture {
+    display: block;
+}
+
+.no-gap-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.no-gap-gallery picture:last-child {
+    margin-bottom: 60px;
+}
+
+#about-picture {
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#about-picture img {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+#main h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#about-content {
+    padding: 40px;
+}
+
+#about-content ul {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
