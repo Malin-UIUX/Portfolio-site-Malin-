@@ -22,7 +22,7 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div>
+        <div class="container">
             <!-- Logo Section -->
             <picture>
                 <!-- Small screen image -->
@@ -45,82 +45,85 @@
 
     <!-- Main Section -->
     <main>
+        <div class="container">
 
-        <!-- Heading Block -->
-        <div>
-            <div>
-                <h1> About </h1>
+            <!-- Heading Block -->
+            <div class="row">
+                <div class="col">
+                    <h1>About</h1>
+                </div>
             </div>
-        </div>
 
-        <!-- Second Section -->
-        <div>
-            <div>
+            <!-- Second Section -->
+            <div id="about-picture" class="row">
+                <div class="col col-50">
+                    <!-- Picture -->
+                    <picture>
+                        <!-- Small screen image -->
+                        <source srcset="img/Picture/AboutMe_Picture@x1.jpg" media="(max-width:767px)">
 
-                <!-- Picture -->
-                <picture>
-                    <!-- Small screen image -->
-                    <source srcset="img/Picture/AboutMe_Picture@x1.jpg" media="(max-width:767px)">
+                        <!-- Large screen image -->
+                        <img src="img/Picture/AboutMe_Picture@x2.jpg" alt="My Picture" width="800">
+                    </picture>
+                </div>
+            </div>
 
-                    <!-- Large screen image -->
-                    <img src="img/Picture/AboutMe_Picture@x2.jpg" alt="My Picture" width="800">
-                </picture>
+            <!-- Row for two columns -->
+            <div class="row" id="about-content">
 
-                <!-- Row for two columns -->
-                <div>
+                <!-- Column 1: My Story -->
+                <div class="col col-60">
+                    <h2>My Story</h2>
+                    <p>I am Malin Hausmann, a UI/UX Designer with a background in psychology (Bachelor of
+                        Science), with a strong interest in how people think and interact with digital
+                        products.
+                        I
+                        strive to create experience that feel clear, intuitive and easy to use. I also enjoy
+                        illustrating and designing costume icons and logos, adding thoughtful details that
+                        bring
+                        clarity and personality to a product.</p>
+                    <p>You can view my full experience here:</p>
+                    <a href="Files/CV.pdf" class="button cv">View my CV</a>
+                </div>
 
-                    <!-- Column 1: My Story -->
+
+                <div class="col col-40">
+                    <!-- Column 2: Skills and Tools -->
+
+                    <h2>My Skills</h2>
+
+
+                    <!-- Row inside Column-->
                     <div>
-                        <h2>My Story</h2>
-                        <p>I am Malin Hausmann, a UI/UX Designer with a background in psychology (Bachelor of
-                            Science), with a strong interest in how people think and interact with digital products.
-                            I
-                            strive to create experiences that feel clear, intuitive and easy to use. I also enjoy
-                            illustrating and designing costume icons and logos, adding thoughtful details that bring
-                            clarity and personality to a product.</p>
-                        <p>You can view my full expierence here:</p>
-                        <a href="Files/CV.pdf" class="button cv">View my CV</a>
+                        <!-- Skills Column -->
+
+                        <h3>UI/UX Skills</h3>
+                        <ul>
+                            <li> User research </li>
+                            <li> User personas </li>
+                            <li> User flows </li>
+                            <li> Usability testing </li>
+                            <li> Designing for different breakpoints </li>
+                            <li> Native mobile apps </li>
+                        </ul>
                     </div>
 
-                    <!-- Column 2: Skills and Tools -->
+                    <!-- Tools Column -->
                     <div>
-                        <h2>My Skills</h2>
-
-                        <!-- Row inside Column-->
-                        <div>
-
-                            <!-- Skills Column -->
-                            <div>
-                                <h3>UI/UX Skills</h3>
-                                <ul>
-                                    <li> User research </li>
-                                    <li> User personas </li>
-                                    <li> User flows </li>
-                                    <li> Usability testing </li>
-                                    <li> Designing for different breakpoints </li>
-                                    <li> Native mobile apps </li>
-                                </ul>
-                            </div>
-
-                            <!-- Tools Column -->
-                            <div>
-                                <h3>Tools</h3>
-                                <ul>
-                                    <li> Figma, Adobe, Sketch </li>
-                                    <li> Photoshop </li>
-                                    <li> Premiere Pro </li>
-                                    <li> After Effects </li>
-                                    <li> Adobe Illustrator </li>
-                                    <li> OpenAI </li>
-                                </ul>
-                            </div>
-
-                        </div>
+                        <h3>Tools</h3>
+                        <ul>
+                            <li> Figma, Adobe, Sketch </li>
+                            <li> Photoshop </li>
+                            <li> Premiere Pro </li>
+                            <li> After Effects </li>
+                            <li> Adobe Illustrator </li>
+                            <li> OpenAI </li>
+                        </ul>
                     </div>
 
                 </div>
-
             </div>
+
         </div>
 
 
@@ -128,7 +131,7 @@
 
     <!-- Footer Section -->
     <footer id="contact">
-        <div>
+        <div class="container">
             <h2>Get in Touch</h2>
             <p>Interested in working together? I am just one email away!</p>
             <a href="malinlinahausmann@gmail.com" class="button contact">Send me an email</a>
@@ -169,6 +172,7 @@
                     <path d="M72.3984 35.7344V38.1484H61.1719V35.7344H72.3984Z" fill="black" />
                 </svg>
             </a>
+
         </div>
 
         <!-- Social Media Section -->
