@@ -235,6 +235,8 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+
+
 #hero {
     background-color: #C2C2C2;
     padding: 80px 0;
@@ -426,6 +428,68 @@ footer svg {
     margin-bottom: 25px;
 }
 
+
+
+
+
+
+/* Remove default margins/padding */
+nav>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hide all menu items except hamburger icon */
+.navtoggle li:not(:last-child) {
+    display: none;
+}
+
+/* Hamburger icon styling */
+/* Make hamburger align with menu using flexbox */
+.navtoggle ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.navtoggle li .icon {
+    position: relative; /* remove absolute */
+    font-size: 24px; /* bigger for better visibility */
+    cursor: pointer;
+}
+
+/* Position nav container for JS toggle */
+.navtoggle,
+.navtoggle.responsive {
+    position: relative;
+}
+
+/* Style toggled menu */
+.navtoggle.responsive li {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 127, 80, 0.5);
+}
+
+.navtoggle.responsive li:last-child {
+    padding: 0 0 10px;
+}
+
+/* Adjust header padding for logo centering */
+header {
+    padding: 10px 0 4px;
+}
+
+/* Push main content below fixed header */
+main {
+    padding-top: 0x;
+    /* adjust according to header height */
+}
+
+
+
 /* ==============================
 Medium devices (640px and larger)
 ================================= */
@@ -496,6 +560,20 @@ Medium devices (640px and larger)
     }
 }
 
+@media screen and (min-width: 641px) {
+  nav > ul {
+    margin: 1em 0;
+  }
+
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }
+
+  .navtoggle li:last-child {
+    display: none; /* hide hamburger icon */
+  }
+}
+
 /* ============================== Large devices (1024px and larger) ============================= */
 @media only screen and (min-width: 1024px) {
 
@@ -559,9 +637,9 @@ Medium devices (640px and larger)
         margin-bottom: 50px;
     }
 
-.col {
-    padding: 0 15px;
-}
+    .col {
+        padding: 0 15px;
+    }
 
     /* Keep clearfix */
     .row::after {
