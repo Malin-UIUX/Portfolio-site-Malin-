@@ -1,3 +1,4 @@
+/* ============================= Base / Global ============================= */
 * {
     box-sizing: border-box;
 }
@@ -99,6 +100,54 @@ a:focus {
 }
 
 
+.svg-container {
+    max-width: 1000px;
+    /* adjust size */
+    margin: 0 auto;
+    /* center it */
+}
+
+#my-project h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.svg-container svg {
+    width: 100%;
+    height: auto;
+    /* keeps aspect ratio */
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.svg-container svg path {
+    stroke: #424A4E;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 20s ease infinite;
+}
+
+.svg-container svg circle {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 1s;
+    /* delay 1s */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
 .button {
     display: inline-block;
     /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
@@ -111,7 +160,7 @@ a:focus {
     border-radius: 3px;
     border-bottom: 2px solid #262a2d;
     /* width of the border, type, color */
-    transition: 0.2s opacity;
+    transition: 0.2s background-color, 0.2s color, 0.2s opacity;
 }
 
 .button:hover,
@@ -129,6 +178,7 @@ a:focus {
     color: #424A4E !important;
     text-transform: uppercase;
     border: 2px solid #C2C2C2;
+    transition: 0.2s background-color, 0.2s color, 0.2s opacity;
 }
 
 .button.contact:hover {
@@ -141,6 +191,7 @@ a:focus {
     color: #424A4E !important;
     text-transform: uppercase;
     border: 2px solid #C2C2C2;
+    transition: 0.2s background-color, 0.2s color, 0.2s opacity;
 }
 
 .button.cv:hover {
@@ -153,6 +204,7 @@ Colors used:
 Primary Color (Dark Grey): #424A4E;
 Secondary Color (Light Grey): #C2C2C2;
 */
+
 
 nav {
     margin-top: 15px;
@@ -205,29 +257,44 @@ nav ul li a:hover {
 }
 
 #hero p {
-    margin: 20;
+    margin: 20px;
     color: #000000;
     line-height: 1.5;
 }
 
-@media (min-width: 768px) {
-    header .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+/* =============================
+  Layout system (flexbox-based)
+  ============================= */
 
-    nav {
-        margin-top: 0;
+/* 1. Basic column styling */
+
+.col {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.col-50 {
+    width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+    .col-md-6 {
+        width: 50%;
+        /* two columns on medium screens */
     }
 }
 
-/* 1. Basic column styling */
-.col {
-    width: 100%;
-    /* Full width on mobile */
-    padding: 0 15px;
-    /* Horizontal spacing inside the column */
-    box-sizing: border-box;
+@media only screen and (min-width: 1024px) {
+    .col-lg-7 {
+        width: 58.3333%;
+        /* left column for 60/40 layout */
+    }
+
+    .col-lg-5 {
+        width: 41.6667%;
+        /* right column for 60/40 layout */
+    }
 }
 
 /* 2. Row flex container to hold columns */
@@ -235,29 +302,16 @@ nav ul li a:hover {
     display: flex;
     /* Arrange child columns in a row */
     flex-wrap: wrap;
-    /* Wrap columns to next line if not enough space */
-    margin: 25px -15px;
-    /* Negative margin to counter the column padding */
+
 }
 
-/* 3. Optional: columns side by side on larger screens */
-@media (min-width: 768px) {
-    .col-50 {
-        width: 50%;
-    }
-
-    /* Custom for About You section */
-    .col-60 {
-        width: 60%;
-    }
-
-    .col-40 {
-        width: 40%;
-    }
+/* Custom for About You section */
+.col-60 {
+    width: 60%;
 }
 
-.col-50 {
-    width: 50%;
+.col-40 {
+    width: 40%;
 }
 
 #work {
@@ -301,7 +355,7 @@ footer {
 }
 
 footer h2 {
-    margin-bottom: 15;
+    margin-bottom: 15px;
 }
 
 footer p {
@@ -370,4 +424,149 @@ footer svg {
 #about-content ul {
     padding-left: 20px;
     margin-bottom: 25px;
+}
+
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+    header {
+        text-align: center;
+        padding: 20px 0 13px;
+    }
+
+    header .container {
+        display: flex;
+        flex-direction: row;
+        /* logo left, nav right */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        width: auto;
+        margin-top: 0;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    #hero {
+        text-align: center;
+        padding: 80px 0;
+    }
+
+    #hero span {
+        display: block;
+    }
+
+    #hero span {
+        display: block;
+    }
+
+    .col-md-6 {
+        width: 50%
+    }
+
+    [class*="col-"] {
+        box-sizing: border-box;
+        padding: 0 15px;
+    }
+
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    [class*="col-"] {
+        box-sizing: border-box;
+        padding: 0 15px;
+        /* spacing between columns */
+    }
+
+
+    #about-page h3 {
+        margin-top: 0;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}
+
+/* ============================== Large devices (1024px and larger) ============================= */
+@media only screen and (min-width: 1024px) {
+
+    /* Restrict main content width and center */
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Desktop header spacing */
+    header {
+        padding: 25px 0;
+    }
+
+    /* Home page: 60/40 layout for project rows HTML: use col-lg-7 and col-lg-5 on the two columns */
+    .col-lg-7 {
+        width: 58.3333%;
+    }
+
+    /* 7/12 */
+    .col-lg-5 {
+        width: 41.6667%;
+    }
+
+
+    .about-left {
+        width: 60%;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    .about-right {
+        width: 40%;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.75em;
+    }
+
+    /* Hero spacing for desktop */
+    #hero {
+        padding: 100px;
+        margin-bottom: 50px;
+    }
+
+.col {
+    padding: 0 15px;
+}
+
+    /* Keep clearfix */
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
