@@ -316,31 +316,31 @@ nav ul li a:hover {
     width: 40%;
 }
 
-#work {
+#projects {
     padding: 40px 0;
 }
 
-#work h2 {
+#projects h2 {
     margin-bottom: 30px;
 }
 
-#work .row {
+#projects .row {
     margin-bottom: 60px;
     padding-bottom: 25px;
     border-bottom: 1px solid #C2C2C2;
 }
 
-#work .row:last-child {
+#projects .row:last-child {
     border-bottom: none;
     padding-bottom: 20px;
 }
 
-#work .col {
+#projects .col {
     padding: 0 15px;
     box-sizing: border-box;
 }
 
-#work img {
+#projects img {
     display: block;
     width: 100%;
     height: auto;
